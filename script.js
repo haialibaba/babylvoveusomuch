@@ -24,13 +24,21 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(displayHeartIcon, 2000);
   }
 
-  function displayMusic(){
+  function displayMusic() {
     const audio = document.getElementById('backgroundMusic');
-    audio.play();
+    audio.play().catch(function(error) {
+      // Handle error
+      console.error('Failed to play audio:', error);
+    });
   }
 
   setTimeout(displayHeartIcon, 100);
-  setTimeout(displayMusic, 100);
+
+  // Add event listener to play music on user interaction
+  document.addEventListener('click', function() {
+    displayMusic();
+  });
+
   setTimeout(() => {
     words.forEach((word, index) => {
       const wordSpan = document.createElement('span');
