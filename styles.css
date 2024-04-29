@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cdb4db;
+}
+
+.container {
+  height: 100vh;
+  padding: 60px;
+  background-color: #cdb4db;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#lyrics {
+  margin-top: 16px;
+  font-size: 18px;
+  color: white;
+  font-size: 100px;
+}
+
+.fade-in-word {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes heartAnimation {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-150px) scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-300px) scale(3);
+    opacity: 0;
+  }
+}
+
+.heart-icon {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-image: url('heart.png');
+  background-size: cover;
+  animation: heartAnimation 2s ease-out forwards;
+}
